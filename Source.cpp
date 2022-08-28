@@ -12,6 +12,11 @@ class DebetandCredit
 	string* wallet;
 	double cost[n];
 	string category_cost[n] = { "health","food","education","car","leisure", "animals","clothing","house","present","services" };
+	double d_sum1, d_sum2, d_sum3;
+	double w_sum1, w_sum2, w_sum3;
+	double m_sum1, m_sum2, m_sum3;
+	string w_categ1, w_categ2, w_categ3;
+	string m_categ1, m_categ2, m_categ3;
 	int day = 0;
 	string inputCard()
 	{
@@ -57,7 +62,9 @@ class DebetandCredit
 	void Refill()
 	{
 		double* sum1 = (double*)malloc(n1*sizeof(double));
+		sum1[n1];
 		double* sum2 = (double*)malloc(n2 * sizeof(double));
+		sum2[n2];
 		char key;
 		string search_card_or_wallet;
 		cout << "What will you fill ?\n";
@@ -267,8 +274,8 @@ class DebetandCredit
 	void ratingSumCost()
 	{
 		char key_day;
-		double sum1, sum2, sum3;
-		sum1 = sum2 = sum3 = cost[0];
+		w_sum1 = w_sum2 = w_sum3 = cost[0];
+		m_sum1 = m_sum2 = m_sum3 = cost[0];
 		cout << "Formation of ratings by maximum amounts.\n";
 		cout << "TOP 3 of costs.\n";
 		cout << "1 - Per week.\n";
@@ -285,45 +292,45 @@ class DebetandCredit
 				cout << "You keep track of costs throughou " << day << " days.\n";
 				for (int i = 1; i < n; i++)
 				{
-					if (sum3 > cost[i])
+					if (w_sum3 > cost[i])
 					{
-						sum3 = cost[i];
+						w_sum3 = cost[i];
 					}
-					if (sum2 > cost[i] && sum2 > sum3)
+					if (w_sum2 > cost[i] && w_sum2 > w_sum3)
 					{
-						sum2 = cost[i];
+						w_sum2 = cost[i];
 					}
-					if (sum1 > cost[i] && sum1 > sum2)
+					if (w_sum1 > cost[i] && w_sum1 > w_sum2)
 					{
-						sum1 = cost[i];
+						w_sum1 = cost[i];
 					}
 				}
 				cout << "TOP 3 of costs by maximum amounts.\n";
-				cout << "TOP-1: " << sum1 << "\n";
-				cout << "TOP-2: " << sum2 << "\n";
-				cout << "TOP-3: " << sum3 << "\n";
+				cout << "TOP-1: " << w_sum1 << "\n";
+				cout << "TOP-2: " << w_sum2 << "\n";
+				cout << "TOP-3: " << w_sum3 << "\n";
 			}
 			if (day == 7)
 			{
 				for (int i = 1; i < n; i++)
 				{
-					if (sum3 > cost[i])
+					if (w_sum3 > cost[i])
 					{
-						sum3 = cost[i];
+						w_sum3 = cost[i];
 					}
-					if (sum2 > cost[i] && sum2 > sum3)
+					if (w_sum2 > cost[i] && w_sum2 > w_sum3)
 					{
-						sum2 = cost[i];
+						w_sum2 = cost[i];
 					}
-					if (sum1 > cost[i] && sum1 > sum2)
+					if (w_sum1 > cost[i] && w_sum1 > w_sum2)
 					{
-						sum1 = cost[i];
+						w_sum1 = cost[i];
 					}
 				}
 				cout << "TOP 3 of costs by maximum amounts.\n";
-				cout << "TOP-1: " << sum1 << "\n";
-				cout << "TOP-2: " << sum2 << "\n";
-				cout << "TOP-3: " << sum3 << "\n";
+				cout << "TOP-1: " << w_sum1 << "\n";
+				cout << "TOP-2: " << w_sum2 << "\n";
+				cout << "TOP-3: " << w_sum3 << "\n";
 			}
 			system("pause");
 			break;
@@ -337,45 +344,45 @@ class DebetandCredit
 				cout << "You keep track of costs throughou " << day << " days.\n";
 				for (int i = 1; i < n; i++)
 				{
-					if (sum3 > cost[i])
+					if (m_sum3 > cost[i])
 					{
-						sum3 = cost[i];
+						m_sum3 = cost[i];
 					}
-					if (sum2 > cost[i] && sum2 > sum3)
+					if (m_sum2 > cost[i] && m_sum2 > m_sum3)
 					{
-						sum2 = cost[i];
+						m_sum2 = cost[i];
 					}
-					if (sum1 > cost[i] && sum1 > sum2)
+					if (m_sum1 > cost[i] && m_sum1 > m_sum2)
 					{
-						sum1 = cost[i];
+						m_sum1 = cost[i];
 					}
 				}
 				cout << "TOP 3 of costs by maximum amounts.\n";
-				cout << "TOP-1: " << sum1 << "\n";
-				cout << "TOP-2: " << sum2 << "\n";
-				cout << "TOP-3: " << sum3 << "\n";
+				cout << "TOP-1: " << m_sum1 << "\n";
+				cout << "TOP-2: " << m_sum2 << "\n";
+				cout << "TOP-3: " << m_sum3 << "\n";
 			}
 			if (day == 30 || day == 31)
 			{
 				for (int i = 1; i < n; i++)
 				{
-					if (sum3 > cost[i])
+					if (m_sum3 > cost[i])
 					{
-						sum3 = cost[i];
+						m_sum3 = cost[i];
 					}
-					if (sum2 > cost[i] && sum2 > sum3)
+					if (m_sum2 > cost[i] && m_sum2 > m_sum3)
 					{
-						sum2 = cost[i];
+						m_sum2 = cost[i];
 					}
-					if (sum1 > cost[i] && sum1 > sum2)
+					if (m_sum1 > cost[i] && m_sum1 > m_sum2)
 					{
-						sum1 = cost[i];
+						m_sum1 = cost[i];
 					}
 				}
 				cout << "TOP 3 of costs by maximum amounts.\n";
-				cout << "TOP-1: " << sum1 << "\n";
-				cout << "TOP-2: " << sum2 << "\n";
-				cout << "TOP-3: " << sum3 << "\n";
+				cout << "TOP-1: " << m_sum1 << "\n";
+				cout << "TOP-2: " << m_sum2 << "\n";
+				cout << "TOP-3: " << m_sum3 << "\n";
 			}
 			system("pause");
 			break;
@@ -385,9 +392,8 @@ class DebetandCredit
 	void ratingCategoryCost()
 	{
 		char key_day;
-		double sum1, sum2, sum3;
-		sum1 = sum2 = sum3 = cost[0];
-		string categ1, categ2, categ3;
+		w_sum1 = w_sum2 = w_sum3 = cost[0];
+		m_sum1 = m_sum2 = m_sum3 = cost[0];
 		cout << "Formation of ratings by maximum amounts.\n";
 		cout << "TOP 3 of costs' categories.\n";
 		cout << "1 - Per week.\n";
@@ -404,51 +410,51 @@ class DebetandCredit
 				cout << "You keep track of costs throughou " << day << " days.\n";
 				for (int i = 1; i < n; i++)
 				{
-					if (sum3 > cost[i])
+					if (w_sum3 > cost[i])
 					{
-						sum3 = cost[i];
-						categ3 = category_cost[i];
+						w_sum3 = cost[i];
+						w_categ3 = category_cost[i];
 					}
-					if (sum2 > cost[i] && sum2 > sum3)
+					if (w_sum2 > cost[i] && w_sum2 > w_sum3)
 					{
-						sum2 = cost[i];
-						categ2 = category_cost[i];
+						w_sum2 = cost[i];
+						w_categ2 = category_cost[i];
 					}
-					if (sum1 > cost[i] && sum1 > sum2)
+					if (w_sum1 > cost[i] && w_sum1 > w_sum2)
 					{
-						sum1 = cost[i];
-						categ1 = category_cost[i];
+						w_sum1 = cost[i];
+						w_categ1 = category_cost[i];
 					}
 				}
 				cout << "TOP 3 of costs' categories.\n";
-				cout << "TOP-1: " << categ1 << "\n";
-				cout << "TOP-2: " << categ2 << "\n";
-				cout << "TOP-3: " << categ3 << "\n";
+				cout << "TOP-1: " << w_categ1 << "\n";
+				cout << "TOP-2: " << w_categ2 << "\n";
+				cout << "TOP-3: " << w_categ3 << "\n";
 			}
 			if (day == 7)
 			{
 				for (int i = 1; i < n; i++)
 				{
-					if (sum3 > cost[i])
+					if (w_sum3 > cost[i])
 					{
-						sum3 = cost[i];
-						categ3 = category_cost[i];
+						w_sum3 = cost[i];
+						w_categ3 = category_cost[i];
 					}
-					if (sum2 > cost[i] && sum2 > sum3)
+					if (w_sum2 > cost[i] && w_sum2 > w_sum3)
 					{
-						sum2 = cost[i];
-						categ2 = category_cost[i];
+						w_sum2 = cost[i];
+						w_categ2 = category_cost[i];
 					}
-					if (sum1 > cost[i] && sum1 > sum2)
+					if (w_sum1 > cost[i] && w_sum1 > w_sum2)
 					{
-						sum1 = cost[i];
-						categ1 = category_cost[i];
+						w_sum1 = cost[i];
+						w_categ1 = category_cost[i];
 					}
 				}
 				cout << "TOP 3 of costs' categories.\n";
-				cout << "TOP-1: " << categ1 << "\n";
-				cout << "TOP-2: " << categ2 << "\n";
-				cout << "TOP-3: " << categ3 << "\n";
+				cout << "TOP-1: " << w_categ1 << "\n";
+				cout << "TOP-2: " << w_categ2 << "\n";
+				cout << "TOP-3: " << w_categ3 << "\n";
 			}
 			system("pause");
 			break;
@@ -462,51 +468,51 @@ class DebetandCredit
 				cout << "You keep track of costs throughou " << day << " days.\n";
 				for (int i = 1; i < n; i++)
 				{
-					if (sum3 > cost[i])
+					if (m_sum3 > cost[i])
 					{
-						sum3 = cost[i];
-						categ3 = category_cost[i];
+						m_sum3 = cost[i];
+						m_categ3 = category_cost[i];
 					}
-					if (sum2 > cost[i] && sum2 > sum3)
+					if (m_sum2 > cost[i] && m_sum2 > m_sum3)
 					{
-						sum2 = cost[i];
-						categ2 = category_cost[i];
+						m_sum2 = cost[i];
+						m_categ2 = category_cost[i];
 					}
-					if (sum1 > cost[i] && sum1 > sum2)
+					if (m_sum1 > cost[i] && m_sum1 > m_sum2)
 					{
-						sum1 = cost[i];
-						categ1 = category_cost[i];
+						m_sum1 = cost[i];
+						m_categ1 = category_cost[i];
 					}
 				}
 				cout << "TOP 3 of costs' categories.\n";
-				cout << "TOP-1: " << categ1 << "\n";
-				cout << "TOP-2: " << categ2 << "\n";
-				cout << "TOP-3: " << categ3 << "\n";
+				cout << "TOP-1: " << m_categ1 << "\n";
+				cout << "TOP-2: " << m_categ2 << "\n";
+				cout << "TOP-3: " << m_categ3 << "\n";
 			}
 			if (day ==30 || day==31)
 			{
 				for (int i = 1; i < n; i++)
 				{
-					if (sum3 > cost[i])
+					if (m_sum3 > cost[i])
 					{
-						sum3 = cost[i];
-						categ3 = category_cost[i];
+						m_sum3 = cost[i];
+						m_categ3 = category_cost[i];
 					}
-					if (sum2 > cost[i] && sum2 > sum3)
+					if (m_sum2 > cost[i] && m_sum2 > m_sum3)
 					{
-						sum2 = cost[i];
-						categ2 = category_cost[i];
+						m_sum2 = cost[i];
+						m_categ2 = category_cost[i];
 					}
-					if (sum1 > cost[i] && sum1 > sum2)
+					if (m_sum1 > cost[i] && m_sum1 > m_sum2)
 					{
-						sum1 = cost[i];
-						categ1 = category_cost[i];
+						m_sum1 = cost[i];
+						m_categ1 = category_cost[i];
 					}
 				}
 				cout << "TOP 3 of costs' categories.\n";
-				cout << "TOP-1: " << categ1 << "\n";
-				cout << "TOP-2: " << categ2 << "\n";
-				cout << "TOP-3: " << categ3 << "\n";
+				cout << "TOP-1: " << m_categ1 << "\n";
+				cout << "TOP-2: " << m_categ2 << "\n";
+				cout << "TOP-3: " << m_categ3 << "\n";
 			}
 			system("pause");
 			break;
@@ -520,22 +526,47 @@ class DebetandCredit
 		{
 			file << "REPORTS.\n";
 			file << "1 - Per day.\n";
-
+			file << "Category of cost: " << "\t | \t" << "Sum";
+			for (int i = 0; i < n; i++)
+			{
+				file << category_cost[i] << "\t | \t" << cost[i] << "\n";
+			}
 			file << "2 - Per week.\n";
-
+			cout << "Category of cost: " << "\t | \t" << "Sum";
+			for (int i = 0; i < n; i++)
+			{
+				cout << category_cost[i] << "\t | \t" << cost[i] << "\n";
+			}
 			file << "3 - Per month.\n";
-
+			cout << "Category of cost: " << "\t | \t" << "Sum";
+			for (int i = 0; i < n; i++)
+			{
+				cout << category_cost[i] << "\t | \t" << cost[i] << "\n";
+			}
 			file << "RATING\n";
 			file << "TOP 3 of costs.\n";
 			file << "1 - Per week.\n";
-
-			file << "2 - Per month.\n";
-
+			file << "TOP 3 of costs by maximum amounts.\n";
+			file << "TOP-1: " << w_sum1 << "\n";
+			file << "TOP-2: " << w_sum2 << "\n";
+			file << "TOP-3: " << w_sum3 << "\n";
+			file << "\n2 - Per month.\n";
+			file << "TOP 3 of costs by maximum amounts.\n";
+			file << "TOP-1: " << m_sum1 << "\n";
+			file << "TOP-2: " << m_sum2 << "\n";
+			file << "TOP-3: " << m_sum3 << "\n";
 			file << "\n\n\n";
 			file << "TOP 3 of costs' categories.\n";
 			file << "1 - Per week.\n";
-
+			file << "TOP 3 of costs' categories.\n";
+			file << "TOP-1: " << w_categ1 << "\n";
+			file << "TOP-2: " << w_categ2 << "\n";
+			file << "TOP-3: " << w_categ3 << "\n";
 			file << "2 - Per month.\n";
+			file << "TOP 3 of costs' categories.\n";
+			file << "TOP-1: " << m_categ1 << "\n";
+			file << "TOP-2: " << m_categ2 << "\n";
+			file << "TOP-3: " << m_categ3 << "\n";
 		}
 		file.close();
 	}
