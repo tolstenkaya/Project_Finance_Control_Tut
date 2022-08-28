@@ -1,0 +1,14 @@
+REPORTS.
+1 - Per day.
+2 - Per week.
+3 - Per month.
+RATING
+TOP 3 of costs.
+1 - Per week.
+2 - Per month.
+
+
+
+TOP 3 of costs' categories.
+1 - Per week.
+2 - Per month.
