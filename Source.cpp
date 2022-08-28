@@ -553,7 +553,7 @@ int main()
 		cout << "5 - Enter costs by category.\n";
 		cout << "6 - Generate a report by cost and category.\n";
 		cout << "7 - Form a rating by maximum amounts.\n";
-		cout << "8 -Save reports and ratings to a file.\n";
+		cout << "8 - Save reports and ratings to a file.\n";
 		cout << "Esc. - Exit.\n";
 		cout << "Your choice: ";
 		ch = _getch();
