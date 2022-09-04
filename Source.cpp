@@ -24,12 +24,12 @@ class DebetandCredit
 		cin >> card[n1];
 		return card[n1];
 	}
-	string* addCard()
+	DebetandCredit* addCard(DebetandCredit* mas, int&n)
 	{
-		card = (string*)realloc(card,(n1 + 1) * sizeof(string));
-		card[n1] = inputCard();
+		mas = (DebetandCredit*)realloc(card,(n1 + 1) * sizeof(DebetandCredit));
+		mas[n1].inputCard();
 		n1++;
-		return card;
+		return mas;
 	}
 	string inputWallet()
 	{
@@ -37,23 +37,24 @@ class DebetandCredit
 		cin >> wallet[n2];
 		return wallet[n2];
 	}
-	string* addWallet()
+	DebetandCredit* addWallet(DebetandCredit* mas, int& n)
 	{
-		wallet = (string*)realloc(wallet, (n1 + 1) * sizeof(string));
-		wallet[n2] = inputWallet();
+		mas = (DebetandCredit*)realloc(wallet, (n1 + 1) * sizeof(DebetandCredit));
+		mas[n2].inputWallet();
 		n2++;
-		return wallet;
+		return mas;
 	}
 	void Print()
 	{
 		cout << "\nCard.";
 		cout << "\nAmount of cards: " << n1;
+		cout << "\n";
 		for (int i = 0; i < n1; i++)
 		{
 			cout <<"Number of cards:"<< card[i] << "\n";
 		}
-		cout << "Wallet.\n";
-		cout << "Amount of walletss: " << n2;
+		cout << "\nWallet.\n";
+		cout << "\nAmount of walletss: " << n2;
 		for (int i = 0; i < n2; i++)
 		{
 			cout << "Number of wallets:" << wallet[i] << "\n";
@@ -574,6 +575,10 @@ class DebetandCredit
 int main()
 {
 	DebetandCredit finance;
+	DebetandCredit* mas1 = nullptr;
+	int n1 = 0;
+	DebetandCredit* mas2 = nullptr;
+	int n2 = 0;
 	char ch;
 	do {
 		cout << "Menu.\n";
@@ -593,14 +598,14 @@ int main()
 		case '1':
 		{
 			system("cls");
-			finance.addCard();
+			finance.addCard(mas1,n1);
 			system("pause");
 			break;
 		}
 		case '2':
 		{
 			system("cls");
-			finance.addWallet();
+			finance.addWallet(mas2,n2);
 			system("pause");
 			break;
 		}
